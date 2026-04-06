@@ -1,12 +1,12 @@
 ---
-name: backend-system-design-handson-generator
+name: backend-handson-generator
 description: >
   バックエンド・API設計・システムデザインの学習トピック・目次・セクション見出しを受け取り、写経するだけで身になるハンズオン形式の学習教材を生成するスキル。
   以下のようなトリガーで必ず使用すること：
   ユーザーがNode.js/Express/PostgreSQL/Redis/MongoDB/Docker/REST API/GraphQL/認証/システムデザイン/マイクロサービス/メッセージキュー/キャッシュ/データベース設計/スケーラビリティ関連の「学習トピック」「目次」「セクション見出し」「カリキュラム項目」を入力して「教材を作って」「ハンズオンにして」「写経できるようにして」「学習ガイドを作って」「hands-on」「教材生成」などと言った場合。
   短い一行のトピック（例：「JWT認証」「CAP定理」「レート制限」）でも、長い目次リストでも対応する。
   バックエンド/インフラ/分散システム関連のプログラミング学習教材の生成リクエスト全般に使う。英語・日本語どちらの入力にも対応。
-  フロントエンド/JavaScript/React のトピックには使わない（それらは js-handson-generator を使う）。
+  フロントエンド/JavaScript/React のトピックには使わない（それらは frontend-handson-generator を使う）。
 ---
 
 # バックエンド・API設計・システムデザイン ハンズオン教材ジェネレーター
@@ -245,7 +245,7 @@ QPS = DAU × (1日あたりの平均リクエスト数) / 86,400
 
 1. ユーザーの入力（トピック or 目次）を受け取る
 2. トピックの粒度を判定する
-3. 教材を Markdown ファイルとしてプロジェクトの `sections/` ディレクトリ配下に生成する
+3. 教材を Markdown ファイルとしてプロジェクトの `sections/backend/` ディレクトリ配下に生成する
 4. 複数セクションの場合は次に進むか確認する
 
 ### ファイル配置ルール
@@ -253,7 +253,7 @@ QPS = DAU × (1日あたりの平均リクエスト数) / 86,400
 章（チャプター）番号でフォルダを分け、節（セクション）番号でファイル名を付ける。
 
 ```
-sections/
+sections/backend/
 ├── 01-server-side-fundamentals/
 │   ├── 1-1-nodejs-event-driven-model.md
 │   ├── 1-2-http-protocol-deep-dive.md
@@ -301,9 +301,9 @@ sections/
 **ファイル名:** `{章番号}-{節番号}-{トピックの英語スラッグ}.md`
 
 例:
-- `1-1. Node.js のイベント駆動モデル` → `sections/01-server-side-fundamentals/1-1-nodejs-event-driven-model.md`
-- `2-3. インデックスとクエリ最適化` → `sections/02-database-design/2-3-index-and-query-optimization.md`
-- `5-6. URL短縮サービス` → `sections/05-system-design/5-6-design-problems/url-shortener.md`
+- `1-1. Node.js のイベント駆動モデル` → `sections/backend/01-server-side-fundamentals/1-1-nodejs-event-driven-model.md`
+- `2-3. インデックスとクエリ最適化` → `sections/backend/02-database-design/2-3-index-and-query-optimization.md`
+- `5-6. URL短縮サービス` → `sections/backend/05-system-design/5-6-design-problems/url-shortener.md`
 
 トピック番号がない場合（例：「JWT認証」のみ）は、カリキュラム内の該当セクションを特定してから適切なフォルダ・ファイル名を決定する。
 

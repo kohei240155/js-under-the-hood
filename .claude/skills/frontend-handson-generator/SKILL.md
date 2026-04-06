@@ -1,11 +1,12 @@
 ---
-name: js-handson-generator
+name: frontend-handson-generator
 description: >
   JavaScriptやフロントエンド技術の学習トピック・目次・セクション見出しを受け取り、写経するだけで身になるハンズオン形式の学習教材を生成するスキル。
   以下のようなトリガーで必ず使用すること：
   ユーザーがJavaScript/TypeScript/React/フロントエンド関連の「学習トピック」「目次」「セクション見出し」「カリキュラム項目」を入力して「教材を作って」「ハンズオンにして」「写経できるようにして」「学習ガイドを作って」「hands-on」「教材生成」などと言った場合。
   短い一行のトピック（例：「クロージャ」「イベントループ」）でも、長い目次リストでも対応する。
-  プログラミング学習教材の生成リクエスト全般に使う。英語・日本語どちらの入力にも対応。
+  フロントエンド/JavaScript 関連のプログラミング学習教材の生成リクエスト全般に使う。英語・日本語どちらの入力にも対応。
+  バックエンド/インフラ/分散システム関連のトピックには使わない（それらは backend-handson-generator を使う）。
 ---
 
 # JavaScript ハンズオン教材ジェネレーター
@@ -146,7 +147,7 @@ description: >
 
 1. ユーザーの入力（トピック or 目次）を受け取る
 2. トピックの粒度を判定する
-3. 教材を Markdown ファイルとしてプロジェクトの `sections/` ディレクトリ配下に生成する
+3. 教材を Markdown ファイルとしてプロジェクトの `sections/frontend/` ディレクトリ配下に生成する
 4. 複数セクションの場合は次に進むか確認する
 
 ### ファイル配置ルール
@@ -154,7 +155,7 @@ description: >
 章（チャプター）番号でフォルダを分け、節（セクション）番号でファイル名を付ける。
 
 ```
-sections/
+sections/frontend/
 ├── 01-basics-and-execution/
 │   ├── 1-1-types-and-coercion.md
 │   ├── 1-2-value-vs-reference.md
@@ -171,7 +172,7 @@ sections/
 **ファイル名:** `{章番号}-{節番号}-{トピックの英語スラッグ}.md`
 
 例:
-- `1-1. 型と型変換の罠` → `sections/01-basics-and-execution/1-1-types-and-coercion.md`
+- `1-1. 型と型変換の罠` → `sections/frontend/01-basics-and-execution/1-1-types-and-coercion.md`
 - `2-3. プロトタイプと継承` → `sections/02-core-language/2-3-prototypes-and-inheritance.md`
 - `3-1. DOM ツリーの構造と操作` → `sections/03-dom-and-browser-apis/3-1-dom-tree-structure.md`
 
